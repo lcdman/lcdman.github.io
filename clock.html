@@ -17,8 +17,8 @@
       font-size: 60px;
       color: #000;
     }
-    .colon.cyan {
-      color: cyan;
+    .colon.red {
+      color: red;
     }
   </style>
 </head>
@@ -50,9 +50,9 @@
       const colons = document.querySelectorAll('.colon');
       colons.forEach(colon => {
         if (millis >= 500) {
-          colon.classList.add('cyan');
+          colon.classList.add('red');
         } else {
-          colon.classList.remove('cyan');
+          colon.classList.remove('red');
         }
       });
 
