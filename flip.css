@@ -17,7 +17,7 @@ body {
 #app {
     width:           100%;
     height:          100%;
-    background:      rgb(18, 18, 18);
+    background:      rgb(108, 108, 108);
     display:         flex;
     flex-direction:  column;
     align-items:     center;
