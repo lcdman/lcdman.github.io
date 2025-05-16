@@ -1,30 +1,31 @@
 body {
-  background: #f4f4f4;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #222;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-family: 'Arial', sans-serif;
+  margin: 0;
 }
 
 .calculator {
-  background: #fff;
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 0 16px rgba(0,0,0,0.2);
   width: 320px;
+  background-color: #111;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
 }
 
-.display {
-  width: 100%;
-  height: 60px;
-  font-size: 2em;
+.screen {
+  background-color: #87CEEB; /* 天藍色 */
+  color: #000;
+  font-size: 2.5em;
   text-align: right;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: none;
-  background: #0ee;
+  padding: 15px;
   border-radius: 8px;
+  margin-bottom: 20px;
+  height: 60px;
+  overflow: hidden;
 }
 
 .buttons {
@@ -34,19 +35,40 @@ body {
 }
 
 button {
+  font-size: 1.5em;
   padding: 20px;
-  font-size: 1.2em;
   border: none;
-  background: #f0f0f0;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all 0.2s ease;
+}
+
+/* 數字鍵、功能鍵 */
+.number,
+.utility {
+  background-color: #333; /* 深灰色 */
+  color: #fff;
+}
+
+/* 運算子 */
+.operator {
+  background-color: #ff9500; /* 橘色 */
+  color: #fff;
+}
+
+/* = 鍵 */
+.equals {
+  background-color: #ff9500; /* 橘色 */
+  color: #fff;
+  grid-row: span 2;
+}
+
+/* 0 鍵佔兩格 */
+.zero {
+  grid-column: span 2;
 }
 
 button:hover {
-  background: #ddd;
-}
-
-button:active {
-  background: #ccc;
+  opacity: 0.9;
+  transform: scale(1.03);
 }

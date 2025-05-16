@@ -1,21 +1,39 @@
-const display = document.querySelector('.display');
+let screen = document.getElementById('screen');
 
-function appendValue(value) {
-  display.value += value;
+function appendNumber(num) {
+  if (screen.textContent === '0') {
+    screen.textContent = num;
+  } else {
+    screen.textContent += num;
+  }
 }
 
-function clearDisplay() {
-  display.value = '';
+function appendOperator(op) {
+  const lastChar = screen.textContent.slice(-1);
+  if ('+-*/'.includes(lastChar)) {
+    screen.textContent = screen.textContent.slice(0, -1) + op;
+  } else {
+    screen.textContent += op;
+  }
 }
 
-function deleteLast() {
-  display.value = display.value.slice(0, -1);
+function clearScreen() {
+  screen.textContent = '0';
+}
+
+function backspace() {
+  if (screen.textContent.length <= 1) {
+    screen.textContent = '0';
+  } else {
+    screen.textContent = screen.textContent.slice(0, -1);
+  }
 }
 
 function calculate() {
   try {
-    display.value = eval(display.value.replace('%', '/100'));
+    const result = eval(screen.textContent);
+    screen.textContent = result;
   } catch {
-    display.value = '錯誤';
+    screen.textContent = '錯誤';
   }
 }
